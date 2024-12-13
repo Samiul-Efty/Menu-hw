@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+nav {  
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px 0;
+}
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+nav ul li a {
+    color: antiquewhite;
+    padding: 15px 25px;
+    display: block;
+    position: relative;
+}
+nav ul li a::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: antiquewhite;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+}
+nav ul li:hover > a::before{
+    width: 100%;
+}
+.submenu{
+    position: absolute;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-top: 3px solid red;
+    text-align: left;
+    top: 58px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.45s;
+}
+li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+.submenu li{
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+.submenu li a{
+    color: black;
+}
+.submenu li:hover > a{
+    background-color: lightblue;
+}
+.submenu .submenu {
+    left: 100%;
+    top: 0;
+}
